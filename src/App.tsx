@@ -1,26 +1,31 @@
-import { useState } from 'react';
-import './App.css';
-// import { Profile } from './components/Profile';
+// import { useState } from 'react';
+import { Box, ChakraProvider } from '@chakra-ui/react'
+import Person from './types/person'
+import Profile from './components/Profile/Profile'
 
 
 // Componente padre di tutti gli altri
 // Contiene l'intera applicazione React
 function App() {
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState<number>(0);
 
-  const handleClick = () => {
-    setCounter(counter+1);
-    console.log(counter);
+
+  // const handleClick = () => {
+  //   setCounter(counter+1);
+  //   console.log(counter);
+  // }
+
+  const person : Person = {
+    name: "Manuel",
+    image: "./logo.svg"
   }
 
   return (
-    <div className="App">
-      <h1>{counter}</h1>
-      <button onClick={handleClick}></button>
-      {/* <Profile />
-      <h2>Questo è il mio H2 per separare i profili</h2>
-      <Profile /> */}
-    </div>
+    <ChakraProvider>
+      <Box bg={"green"}>
+        <Profile person={person}/>
+      </Box>
+    </ChakraProvider>
   );
 }
 

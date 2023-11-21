@@ -4,8 +4,13 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
     ],
+    "paths": {
+      "~": ["./src"],
+      "~components": ["./src/components"],
+      "%ASSETS%": ["./assets"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +23,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": [
-    "src"
-  ]
+    "./src",
+    "src/components"
+  ],
+  
 }
